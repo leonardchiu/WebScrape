@@ -54,7 +54,7 @@ async function scrape() {
          });
     };
 
-    console.log("NO LUCK!")
+    console.log("NO LUCK! TRY AGAIN")
 
 }
 
