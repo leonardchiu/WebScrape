@@ -13,7 +13,7 @@ const url = "https://store.sony.com.sg/collections/playstation-consoles/products
 const product = {name: "", status: "", link: "", };
 
 //Set interval of 5mins to run
-const handle = setInterval(scrape, 20000);
+const handle = setInterval(scrape, 300000);
 
 async function scrape() {
     const {data} = await axios.get(url);
@@ -43,16 +43,18 @@ async function scrape() {
     
     console.log(product);
 
-    if(product.status === "Out Of Stock"){
-        console.log("NO LUCK!");
-        //messagebird.messages.create(params, function (err, response) {
-        //    if (err) {
-        //      return console.log(err);
-        //    }
-        //    console.log(response);
-        //    clearInterval(handle);
-        //  });
+    if(product.status !== "Out Of Stock"){
+        // console.log("NO LUCK!");
+        messagebird.messages.create(params, function (err, response) {
+           if (err) {
+             return console.log(err);
+           }
+           console.log(response);
+           clearInterval(handle);
+         });
     };
+
+    console.log("NO LUCK!")
 
 }
 
