@@ -53,8 +53,8 @@ async function scrape() {
            clearInterval(handle);
          });
     };
-
-    console.log("NO LUCK! TRY AGAIN")
+    var now = new Date();
+    console.log(now.toUTCString() + " - NO LUCK! TRY AGAIN");
 
 }
 
