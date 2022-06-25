@@ -54,7 +54,7 @@ async function scrape() {
          });
     };
     var now = new Date();
-    console.log(now.toUTCString() + " - NO LUCK! TRY AGAIN");
+    console.log(now.toLocaleDateString() + " - " +  now.toLocaleTimeString() + " - NO LUCK! TRY AGAIN");
 
 }
 
